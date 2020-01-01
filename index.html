@@ -8,10 +8,78 @@
     header {
         position: relative;
         background-color:rgb(214, 208, 208);
-        height:65px;
+        height:60px;
         width:100vw; 
         border:2px dashed green;   
         z-index:10;
+    }
+
+    .navbar{
+        list-style: none;
+        display:flex;
+        justify-content: flex-end;
+        margin:0.5vh 10vw 1% 0;      
+    }
+
+    .navbar li{
+        padding:15px 15px;       
+        border:3px solid black; 
+    }
+    .navbar li a{
+        color:black;
+        font-size: 15px;        
+        text-decoration: none;  
+    }
+    .navbar li a:hover{
+        opacity:0.5;
+    }
+    .fa-bars-div{
+        display: none;
+        text-align: end;
+        padding-top:15px;
+        padding-right:40px
+    }    
+    .fa-bars{
+       font-size: xx-large;
+    }
+
+@media (max-width: 1250px){
+ .fa-bars-div{
+     display: block;
+ }
+ .navbar{
+     display: none;
+ }
+}
+
+    .intro-background{
+        background-image: url(images/cover3.jpg);
+        background-size: cover;
+        background-position: center;
+        filter:blur(6px);  
+        height: 100vh;
+        width:100vw;
+        border: 5px solid black;
+        z-index: -10;
+    }
+    .intro{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);        
+        text-align: center;              
+        border: 3px solid black;
+        z-index: 2;
+    }
+    
+    .logo {
+        text-align: center;     
+        border:3px solid white;
+        position: relative;        
+    }
+    .logo img{
+        max-width:300px;        
+        padding-top:20vh;     
     }
     h2{
         font-size:50px;
@@ -44,66 +112,37 @@
     [type='button']:hover{
         opacity: 0.5;
     }
-
-    .navbar{
-        list-style: none;
-        display:flex;
-        justify-content: flex-end;
-        margin:0.5vw 10vw 1% 0;      
-    }
-
-    .navbar li{
-        padding:15px 15px;       
-        border:3px solid black; 
-    }
-    .navbar li a{
-        color:black;
-        font-size: 15px;        
-        text-decoration: none;  
-    }
-    .navbar li a:hover{
-        opacity:0.5;
-    }
-
-    .intro-background{
-        background-image: url(images/cover3.jpg);
-        background-size: cover;
-        background-position: center;
-        filter:blur(18px);  
-        height: 100vh;
-        width:100vw;
-        border: 5px solid black;
-        z-index: -10;
-    }
-    .intro{
-        position: absolute;
-        top:5vh;
-        left: 10vw;
-        width:80vw;
-        height:100vh;
-        text-align: center;              
-        border: 3px solid black;
-        z-index: 2;
-    }
+   
     
-    .logo {
-        text-align: center;     
-        border:3px solid white;
-        position: relative;        
-    }
-    .logo img{
-        max-width:300px;       
-    }
     .daiict-info,.damunc-info{
         border:3px solid black;
         text-align:left;
         min-height: 100vh;
         margin:0 auto;
-        padding:20vh;
+        padding:10vw;
     }
     .damunc-info{
         background-color: rgb(240, 240, 240);
     }
+    @media (max-width: 775px){
+    .logo img{
+        max-width:250px;       
+    }
+    h2{
+        font-size:30px ;
+        font-weight:7 ;
+        letter-spacing:15 ;
+    }
+    h4{
+        font-size:20px ;
+        font-weight:5 ;
+        letter-spacing:10 ;
+    }
+    }  
+    @media(max-width:350px)
+    {
+        
+    }     
     .gallery{
         border:3px solid black;
         background-color: cadetblue;
@@ -140,18 +179,34 @@
     footer{
         border:3px solid black;
         background-color: cadetblue;
-        padding:0 4vw;
+        padding:10vh 4vw;
+        min-height:100vh ;
     }
     .follow{
         background-color:red;
         width:80%;
-        height:4vw;
+        height:8vh;
         margin:auto;
         justify-content: space-around;
         list-style: none;
         display:flex ;
         padding: 0;
-        margin-top:3vw;
+        margin-top:6vh;
+    }
+    .footer-list{
+        display:flex;
+        list-style: none;
+        background-color:gray;
+        justify-content: space-around;
+        text-align: center;
+        margin:4vh 2vw;  
+        padding:0;
+        border:3px solid black;  
+    }
+    .footer-list li{
+        border:3px solid brown;
+        text-align: center;
+        width:30%
     }
     .follow li{
         background-color: white;
@@ -163,39 +218,45 @@
         position: relative;
         top:25%;
     }
-    .footer-list{
-        display:flex;
-        list-style: none;
-        background-color:gray;
-        justify-content: space-around;
-        text-align: center;
-        margin:2vw 2vw;  
-        padding:0;
-        border:3px solid black;  
+
+    
+    .fab{
+        font-size: 2vw;
+        color: gray;
     }
-    .footer-list li{
-        border:3px solid brown;
-        text-align: center;
-        width:30%
-    }
+    
     .footer-list li img{
         width:100%;
         max-width:300px;
 
     }
+    @media (max-width: 840px){
+        .gallery ul{
+            display: block;
 
-    .fa-bars-div{
-        display: none;
-        text-align: end;
-        padding-top:20px;
-        padding-right:40px
-    }    
-    .fa-bars{
-       font-size: xx-large;
+        }
+        .gallery ul li img{
+        width:50%;
+        background-color: red;
+        margin-top:3vw;
+        
     }
-    .fab{
-       font-size: 2vw;
-       color: gray;
+        footer{ 
+        }
+        .footer-list{
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding:0;
+            list-style: none;    
+        }
+        .footer-list li{
+            width:auto;
+            height:50%;
+        }
+        .footer-list li img{
+            max-width:300px;
+        }
     }
 </style>
 
