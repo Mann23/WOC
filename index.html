@@ -6,42 +6,38 @@
     }
     header {
         background-color:rgb(214, 208, 208);
-        height:5vw;
-        width:100%; 
-        border:2px dashed red;   
+        height:80px;
+        width:100vw; 
+        border:2px dashed green;   
     }
     h2{
-        font-size:3vw;
+        font-size:50px;
         font-weight: 10;
         text-align: center;
-        letter-spacing: 0.5vw;
+        letter-spacing: 20px;
         color:white;
-        height:10%;
-        margin:0 auto 1vh auto;
-
-
+        margin:0 auto;
     }
     h4{
-        font-size:2vw;
+        font-size:30px;
         font-weight: 7;
         text-align: center;
-        letter-spacing: 0.3vw;
+        letter-spacing: 15px;
         color:white;
-        height:20%;
+        margin:0 auto 5vh auto;
     }
 
-    .btn{
-        margin:0 50%;
+    [type='button']{
         border:2px solid black;
         padding:20px;
         border-radius:50px ;
+        font-style: bold;
         background-color: white;
-        color:rgb(73, 70, 70)
-        
+        color:rgb(73, 70, 70);        
     }
 
-    .btn:hover{
-        background-color: gray;
+    [type='button']:hover{
+        opacity: 0.5;
     }
 
     .navbar{
@@ -49,20 +45,16 @@
         display:flex;
         flex: 1 1 auto;
         justify-content: flex-end;
-        margin:1% 5vw;      
+        margin:1% 10vw 1% 20vw;      
     }
 
     .navbar li{
-        
-        width:15vw;
-       
+        padding:15px 10px;       
         border:3px solid black; 
     }
     .navbar li a{
         color:black;
-        font-size: 3vh;
-        font-weight: bold;
-        
+        font-size: 15px;        
         text-decoration: none;  
     }
     .navbar li a:hover{
@@ -70,20 +62,20 @@
     }
 
     .intro-background{
-        background-image: url(images/background.jpg);
-        background-repeat: no-repeat;
+        background-image: url(images/cover3.jpg);
         background-size: cover;
         background-position: center;
         filter:blur(8px);
         height: 100vh;
+        width:100vw;
         border: 5px solid black;
     }
     .intro{
         position: absolute;
-        top:10vw;
+        top:10vh;
         left: 10vw;
         width:80vw;
-        height:90%;
+        height:100vh;
         text-align: center;              
         border: 3px solid black;
     }
@@ -91,22 +83,32 @@
     .logo {
         text-align: center;     
         border:3px solid white;
-        height: 60%;
+        position: relative;        
     }
     .logo img{
-        padding:0 10px;
-        width:80%;
-        max-width:400px;
-        height:100%;
-        background-color: black;
-        
+        max-width:300px;       
     }
-    .daiict-info{
+    .daiict-info,.damunc-info{
         border:3px solid black;
-        text-align:justify;
+        text-align:left;
+        min-height: 100vh;
+        margin:0 auto;
+        padding:20vh;
     }
     .damunc-info{
-        border:3px solid black;
+        background-color: rgb(240, 240, 240);
+    }
+
+    .gallery{
+        display: flex;
+        list-style: none;
+        background-color:gray;
+        padding-right:2vw ;        
+    }
+    .gallery li img{
+        width:90%;
+        background-color: red;
+        margin:2vw;
     }
 </style>
 
@@ -134,8 +136,8 @@
                 <div  class="logo">
                 <img src="images/damuncLogo.jpg" alt="DAMUNC-Logo">
                 </div>
-                <h2>D  A  M  U  N  C</h2>
-                <h4>D  A  I  I  C  T  ,<br>G  A  N  D  H  I  N  A  G  A  R<br>5  T  H   O  C  T  -  6  T  H   O  C  T</h4>
+                <h2>DAMUNC</h2><br>
+                <h4>DAIICT,<br>GANDHINAGAR<br><br>5TH OCT-6TH OCT</h4>
                 <input type="button" value="REGISTER NOW!" name="register-button">                
             </div>
 
@@ -143,6 +145,7 @@
                 <br>
                 <br>
                 <h1>ABOUT DAIICT</h1>
+                <br>
                 <br>
                 <p>
                     <em>"Technology shapes the society and society shapes technology" - Robert White</em>
@@ -165,6 +168,7 @@
             <div class="damunc-info">
                 <h1>ABOUT DAMUNC</h1>
                         <br>
+                        <br>
                         <h3>How it all began?</h3>
                         <br>
                         <p>
@@ -181,20 +185,22 @@
                             <br>
                             <br>
                         </p>
-                </div>
+            </div>
                 <div>
-                    <h3>GALLERY</h3>
-                    <ul>
-                        <li><img src="images/gallery1.jpg" alt="glimpses of DAMUNC"></li>
-                        <li><img src="images/2.jpg" ></li>
-                        <li><img src="images/3.jpg" ></li>
-                        <li><img src="images/4.jpg" ></li>
+                    <h3 style="text-align: center;">GALLERY</h3>
+                    <ul class="gallery">
+                       <li><a href="images/gallery1.jpg"><img src="images/gallery1.jpg" alt="glimpses of DAMUNC"></li></a>
+                        <li><a href="images/2.jpg"><img src="images/2.jpg" alt="glimpses of DAMUNC"></li></a>
+                        <li><a href="images/3.jpg"><img src="images/3.jpg" alt="glimpses of DAMUNC"></li></a>
+                        <li><a href="images/4.jpg"><img src="images/4.jpg" alt="glimpses of DAMUNC"></li></a>
+                      
                     </ul>
-                    <ul>
-                        <li><img src="images/5.jpg" ></li>
-                        <li><img src="images/6.jpg" ></li>
-                        <li><img src="images/7.jpg" ></li>
-                        <li><img src="images/8.jpg" ></li>
+                    <ul class="gallery">
+                        <li><a href="images/5.jpg"><img src="images/5.jpg" alt="glimpses of DAMUNC"></li></a>
+                        <li><a href="images/6.jpg"><img src="images/6.jpg" alt="glimpses of DAMUNC"></li></a>
+                        <li><a href="images/7.jpg"><img src="images/7.jpg" alt="glimpses of DAMUNC"></li></a>
+                        <li><a href="images/8.jpg"><img src="images/8.jpg" alt="glimpses of DAMUNC"></li></a>
+                      
                     </ul>
                 </div>
         </main>
