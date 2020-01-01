@@ -2,13 +2,16 @@
 <style>
     *{
         box-sizing: border-box; 
-        margin: 0;       
+        margin: 0;   
+        font-family: Lato;    
     }
     header {
+        position: relative;
         background-color:rgb(214, 208, 208);
-        height:80px;
+        height:65px;
         width:100vw; 
         border:2px dashed green;   
+        z-index:10;
     }
     h2{
         font-size:50px;
@@ -25,6 +28,8 @@
         letter-spacing: 15px;
         color:white;
         margin:0 auto 5vh auto;
+        padding-right:2px;
+        
     }
 
     [type='button']{
@@ -43,13 +48,12 @@
     .navbar{
         list-style: none;
         display:flex;
-        flex: 1 1 auto;
         justify-content: flex-end;
-        margin:1% 10vw 1% 20vw;      
+        margin:0.5vw 10vw 1% 0;      
     }
 
     .navbar li{
-        padding:15px 10px;       
+        padding:15px 15px;       
         border:3px solid black; 
     }
     .navbar li a{
@@ -65,19 +69,21 @@
         background-image: url(images/cover3.jpg);
         background-size: cover;
         background-position: center;
-        filter:blur(8px);
+        filter:blur(18px);  
         height: 100vh;
         width:100vw;
         border: 5px solid black;
+        z-index: -10;
     }
     .intro{
         position: absolute;
-        top:10vh;
+        top:5vh;
         left: 10vw;
         width:80vw;
         height:100vh;
         text-align: center;              
         border: 3px solid black;
+        z-index: 2;
     }
     
     .logo {
@@ -98,17 +104,98 @@
     .damunc-info{
         background-color: rgb(240, 240, 240);
     }
-
     .gallery{
-        display: flex;
-        list-style: none;
-        background-color:gray;
-        padding-right:2vw ;        
+        border:3px solid black;
+        background-color: cadetblue;
     }
-    .gallery li img{
+    .gallery h3{
+        text-align: center;
+        font-size:30px;
+        letter-spacing: 15px;
+        padding:5vw; 
+    }
+    
+    .gallery ul li img{
         width:90%;
         background-color: red;
-        margin:2vw;
+        margin-top:3vw;
+        
+    }
+    
+
+    .gallery ul{
+        display:flex;
+        list-style: none;
+        background-color:gray;
+        justify-content:space-around;
+        text-align: center;  
+        padding: 2vw 2vw 0 2vw;
+    }
+    .footer-heading{
+        text-align: center;
+        font-size:30px;
+        margin:4vw auto 1vw auto ; 
+        border:3px solid white;
+    }
+    footer{
+        border:3px solid black;
+        background-color: cadetblue;
+        padding:0 4vw;
+    }
+    .follow{
+        background-color:red;
+        width:80%;
+        height:4vw;
+        margin:auto;
+        justify-content: space-around;
+        list-style: none;
+        display:flex ;
+        padding: 0;
+        margin-top:3vw;
+    }
+    .follow li{
+        background-color: white;
+        margin:0 15px;
+        border-radius: 50%;
+    }
+
+    .follow li i{
+        position: relative;
+        top:25%;
+    }
+    .footer-list{
+        display:flex;
+        list-style: none;
+        background-color:gray;
+        justify-content: space-around;
+        text-align: center;
+        margin:2vw 2vw;  
+        padding:0;
+        border:3px solid black;  
+    }
+    .footer-list li{
+        border:3px solid brown;
+        text-align: center;
+        width:30%
+    }
+    .footer-list li img{
+        width:100%;
+        max-width:300px;
+
+    }
+
+    .fa-bars-div{
+        display: none;
+        text-align: end;
+        padding-top:20px;
+        padding-right:40px
+    }    
+    .fa-bars{
+       font-size: xx-large;
+    }
+    .fab{
+       font-size: 2vw;
+       color: gray;
     }
 </style>
 
@@ -117,18 +204,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b142056294.js" crossorigin="anonymous"></script>
     <title>DAMUNC - Dhirubhai Ambani Model United Nations Conference</title>
 </head>
 <body>
-     <header>
+    <header>
          <ul class="navbar">
             <li id="element1"><a href="#">Letter From Sec-Gen</a></li>
             <li><a href="LetterFromEB.html">Letter From EB</a></li>
             <li><a href="#">Letter of Recognition</a></li>
             <li><a href="#">About Committe</a></li>
             <li><a href="#">Registration</a></li>
-            <li><a href="#">Meet the Team</a></liid="element1">
-         </ul>           
+            <li><a href="#">Meet the Team</a></liid="element1">    
+         </ul>
+         <div class="fa-bars-div">
+         <i class="fas fa-bars"></i> 
+        </div>          
     </header>     
     <main>
             <div class="intro-background"></div>
@@ -137,7 +229,7 @@
                 <img src="images/damuncLogo.jpg" alt="DAMUNC-Logo">
                 </div>
                 <h2>DAMUNC</h2><br>
-                <h4>DAIICT,<br>GANDHINAGAR<br><br>5TH OCT-6TH OCT</h4>
+                <h4>DAIICT, GANDHINAGAR<br><br>5TH OCT-6TH OCT</h4>
                 <input type="button" value="REGISTER NOW!" name="register-button">                
             </div>
 
@@ -186,16 +278,16 @@
                             <br>
                         </p>
             </div>
-                <div>
-                    <h3 style="text-align: center;">GALLERY</h3>
-                    <ul class="gallery">
+                <div  class="gallery">
+                    <h3>GALLERY</h3>
+                    <ul>
                        <li><a href="images/gallery1.jpg"><img src="images/gallery1.jpg" alt="glimpses of DAMUNC"></li></a>
                         <li><a href="images/2.jpg"><img src="images/2.jpg" alt="glimpses of DAMUNC"></li></a>
                         <li><a href="images/3.jpg"><img src="images/3.jpg" alt="glimpses of DAMUNC"></li></a>
                         <li><a href="images/4.jpg"><img src="images/4.jpg" alt="glimpses of DAMUNC"></li></a>
                       
                     </ul>
-                    <ul class="gallery">
+                    <ul>
                         <li><a href="images/5.jpg"><img src="images/5.jpg" alt="glimpses of DAMUNC"></li></a>
                         <li><a href="images/6.jpg"><img src="images/6.jpg" alt="glimpses of DAMUNC"></li></a>
                         <li><a href="images/7.jpg"><img src="images/7.jpg" alt="glimpses of DAMUNC"></li></a>
@@ -203,15 +295,15 @@
                       
                     </ul>
                 </div>
-        </main>
+    </main>
         <footer>
-        <ul>
+        <ul class="footer-list">
             <li>
-                    <h3>FOLLOW US</h3>
-                    <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <h3 class="footer-heading">FOLLOW US</h3>
+                    <ul class="follow">
+                    <li><i class="fab fa-facebook-f"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
                     </ul>
                   
             </li>
@@ -219,18 +311,18 @@
                 <img src="images/damuncLogo.jpg" alt="DAMUNC-Logo">
             </li>
             <li>
-                <h3>CONTACT US</h3>
+                <h3 class="footer-heading">CONTACT US</h3>
                 <p>
-                    Email: daiictmunc@gmail.com
-                    OR
-                    Call Us At:
-                    Vyom: (+91)6358077665
+                    Email: daiictmunc@gmail.com<br>
+                    OR<br>
+                    Call Us At:<br>
+                    Vyom: (+91)6358077665<br>
                     Abhignya: (+91)7433009466
                 </p>
             </li>
-            <hr>
-            <h3>All copyrights © reserved to DA-IICT</h3>
         </ul>
+            <hr>
+            <h3 style="text-align: center;margin:25px auto 50px auto;font-size: smaller;color: gray;">All copyrights &copy reserved to DA-IICT</h3>
         </footer>
 </body>
 </html>
