@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<style>
+    *{
+        box-sizing: border-box; 
+        margin: 0;   
+        font-family: Lato,monospace;    
+    }
+    header {
+        position: fixed;
+        background-color:rgb(245, 245, 245);
+        height:60px;
+        width:100vw;   
+        z-index:10;
+    }
+
+    .navbar{
+        list-style: none;
+        display:flex;
+        justify-content: flex-end;
+        margin:0.5vh 10vw 1% 0;      
+    }
+
+    .navbar li{
+        padding:15px 15px; 
+    }
+    .navbar li a{
+        color:black;
+        font-size: small;        
+        text-decoration: none;  
+    }
+    .navbar li a:hover{
+        opacity:0.5;
+        font-size:large;
+    }
+    .fa-bars-div{
+        display: none;
+        text-align: end;
+        padding-top:15px;
+        padding-right:20px
+    }    
+    .fa-bars {
+       font-size: 25px;
+    }
+    .intro-background{
+        background-image: url(images/cover2.jpg);
+        background-size: cover;
+        background-position: center;
+        filter:blur(3px);  
+        height: 80vh;
+        width:100vw;
+        z-index: -10;
+    }
+    .intro{
+        position: absolute;
+        display:flex;
+        top:45%;
+        transform:translateY(-50%);
+        width:100%;        
+        text-align: center;
+        z-index: 2;        
+        border:3px solid black; 
+    }
+    
+    .logo {
+        position: relative;       
+    }
+    .logo img{
+        max-width:350px;
+        border:2px solid black;
+        margin-right:35% ;
+        margin-left: 30%;     
+    }
+    h2{
+        font-size: x-large;
+        text-align: center;
+        color:white;
+        padding-top:13vh;
+        margin-right:7vw ;
+        margin-left: auto;       
+        border:2px solid black; 
+    }
+
+    .gallery{
+        margin-bottom:10vh;
+    }
+    .gallery h3{
+        font-size:30px;
+        letter-spacing: 5px;
+        padding:5vw; 
+    }
+    .gallery ul li{
+        position: relative;
+        border: 3px solid red;
+        width:25%;
+    }
+    .gallery ul li img{
+        width:80%;
+        margin-top:3vw;
+        box-shadow: 1px 1px 50px 0 rgb(172, 172, 172);
+        
+        border:5px solid black;
+    }
+    .gallery ul li img:hover{
+        transform: translatey(-20px);
+        transform: scale(1.3);
+        transition:transform 0.5s;
+        opacity:0.3;
+    }   
+
+    .gallery ul{
+        display:flex;
+        list-style: none;
+        justify-content:space-around;
+        text-align: center;  
+        padding: 2vw 2vw 0 2vw;
+        border:5px solid black;
+    }
+    .gallery ul li div{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        background-color: white;
+        z-index:-10;
+    }
+    .footer-heading{
+        text-align: center;
+        font-size:30px;
+        margin:4vw auto 1vw auto ;
+    }
+    footer{
+        background-color: rgb(54, 54, 54);
+        padding-top:5vh;
+        color:rgb(119, 118, 118);
+    }
+    footer h3{
+        color:white;
+    }
+    .footer-list{
+        display:flex;
+        list-style: none;
+        justify-content: space-evenly;
+        text-align: center;
+        margin:8vh 2vw;  
+        padding:0;  
+    }
+    .footer-list li{
+        text-align: center;
+    }
+    
+    .footer-list li img{
+        width:100%;
+        width: 300px;
+        min-width:200px;
+       
+
+    }
+    .follow{
+        justify-content: center;
+        list-style: none;
+        display:flex ;
+        padding: 0;
+        margin-top:6vh;
+    }
+    .follow li{
+        margin:0 15px;
+    }
+    .follow li:hover{
+        transform: scale(1.4);
+    }
+    .follow li i{
+        background: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 15px;
+        color: rgb(54, 54, 54);
+        font-size: larger;
+    }
+
+    
+    .fab{
+        font-size: 2vw;
+        color: gray;
+    }
+    hr{
+        width: 80%;
+        margin: 5px auto;
+    }
+    @media (max-width: 1250px){
+ .fa-bars-div{
+     display: block;
+ }
+ .navbar{
+     display: none;
+ }
+ .h2{
+     font-size: large ;
+     padding-left: 15%;
+ }
+ .logo img{
+     max-width: 300px;
+     margin-right: 15%;
+ }
+ .gallery ul li div{
+     font-size:small;
+ }
+}
+    @media (max-width: 775px){
+    .logo img{
+        max-width:250px;       
+    }
+    h2{
+        font-size:30px ;
+        letter-spacing:15 ;
+    }
+    
+    }  
+    @media(max-width:350px)
+    {
+        header{
+            height:45px;
+        }
+        
+        .fa-bars-div{
+            padding-top:10px;
+        }
+    }  
+   
+    @media (max-width: 1000px){
+        .intro-background{
+            height:
+        }
+        .intro{
+            display: block;
+        }
+        .gallery ul{
+            display: block;
+
+        }
+        .gallery ul li img{
+        width:70%;
+        margin-top:3vw;
+        
+    }
+        footer p{
+            font-size: small;
+        }
+        .footer-list{
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding:0;
+            list-style: none;    
+        }
+        .footer-list li{
+            width:auto;
+        }
+        .footer-list li img{
+            max-width:200px;
+        }
+        hr{
+            max-width:300px;
+            border-style: inset;
+            border-color: rgb(119, 119, 119);
+        }
+    }
+
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b142056294.js" crossorigin="anonymous"></script>
+    <title>DAMUNC - Dhirubhai Ambani Model United Nations Conference</title>
+</head>
+<body>
+    <header>
+        <ul class="navbar">
+           <li><a href="#">Letter From Sec-Gen</a></li>
+           <li><a href="#">Letter From EB</a></li>
+           <li><a href="#">Letter of Recognition</a></li>
+           <li><a href="#">About Committe</a></li>
+           <li><a href="#">Registration</a></li>
+           <li><a href="team.html">Meet the Team</a></li>    
+        </ul>
+        <div class="fa-bars-div">
+        <i class="fas fa-bars"></i> 
+       </div>          
+   </header>
+   <main>
+        <div class="intro-background"></div>
+            <div class="intro">
+                <div  class="logo">
+                <img src="images/damuncLogo.jpg" alt="DAMUNC-Logo">
+                </div>
+                <h2><span style="font-size:50px ;letter-spacing: 35px;">DAMUNC</span><br><br><span style="font-size:x-large;letter-spacing: 20px;">DAIICT,<br><br>GANDHINAGAR</span></h2>               
+        </div>
+        <div  class="gallery">
+            <h3>MEET THE TEAM</h3>
+            <ul>
+               <li>
+                   <div>
+                   <strong> VYOM SARAF</strong><br>
+                    Known for his nerdiness and sense of humour, Vyom Saraf has a flair in getting things done. He loves football as much as he loves being a MUN-er. MUN-ing is what he loves the most. This conference is his brainchild and he will do whatever it takes to make DAMUNC reach heights. He works hard and will harangue others to do so too but he's a softie at the heart. Also, never argue with him because he'll win it anyway.
+                   </div>
+                   <a href="images/vyom.jpeg"><img src="images/vyom.jpeg" alt="Team Members"></a>
+                </li>
+                <li>
+                    <div>
+                       <strong> ABHIGNYA RAO</strong> <br><br>
+Meet Abhignya, the bubbly full-of-life human. If you have a problem, she's the go to resource person. She started MUN-ing properly not so long ago but her passion for the activity shows. Besides getting things done, she's a professional singer and dabbles with poetry and writing. She hopes that DAMUNC will be a conference where people yearn to learn.
+                    </div>
+                    <a href="images/abhignya.jpg"><img src="images/abhignya.jpg" alt="Team Members"></a>
+                </li>
+                <li>
+                    <div>
+                        <strong>BHARGAV DAVE</strong> <br><br>
+Meet Bhargav, the ambivert bookworm who is an all- around nerd. Dropping pop culture references every minute, his passion for random knowledge and debating has led him to MUNs and his passion for MUNs is matched only by his passion for quizzing and he aims to learn a lot through DAMUN.
+                    </div>
+                    <a href="images/bhargav.jpeg"><img src="images/bhargav.jpeg" alt="Team Members"></a>
+                </li>
+                <li>
+                    <div>
+                    <strong>HARSH KHATRI </strong><br><br>
+Harsh Khatri is the calmest person in the bunch. He likes competitive coding and plays basketball. Generally shy, he comes to life as a delegate. A building curiosity for international politics had him drawn into the world of MUNs.
+                    </div>
+                    <a href="images/harsh.jpg"><img src="images/harsh.jpg" alt="Team Members"></a>
+                </li>
+              
+            </ul>
+            <ul>
+                <li>
+                    <div>
+                    <strong>RAVI TIWARI</strong> <br><br>
+Say hi to Ravi Tiwari, the melancholic of the committee. He's an optimistic guy who literally loves football from his core. An inclination to politics has drawn him towards debating in general. MUN-ing is an amalgamation of learning something new and international affairs and this is how he ended up a MUN-er.
+                    </div>
+                    <a href="images/ravi.jpg"><img src="images/ravi.jpg" alt="Team Members"></a>
+                </li>
+                <li>
+                    <div>
+                    <strong> RUSHABH GAJAB </strong><br><br>
+Rushabh Gajab, he is the introvert, the silent one of the groups. Debating and MUN-ing has been his love since his first year. His hobbies include reading interesting posts on Quora and fantasy novels. He holds the position of the Debate Core member and it is this responsibility of his, that has driven him to be a part of the MUNC.
+                    </div>
+                    <a href="images/rushab.jpg"><img src="images/rushab.jpg" alt="Team Members"></a>
+                </li>
+                <li>
+                    <div>
+                    <strong>   SAIRAM VENKATACHALAM</strong> <br><br>
+Sairam Venkatachalam considers himself a realist and is ready to challenge anything and everything. A generally open-minded person, he is always willing to set aside his subjective biases to achieve a beneficial end. His love for debates and international politics has turned him into a fan of MUNs.
+                    </div>
+                    <a href="images/sai.jpg"><img src="images/sai.jpg" alt="Team Members"></a>
+                </li>
+              
+            </ul>
+        </div>
+   </main> 
+   <footer>
+    <ul class="footer-list">
+        <li>
+                <h3 class="footer-heading">FOLLOW US</h3>
+                <ul class="follow">
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-twitter"></i></li>
+                </ul>
+              
+        </li>
+        <li>
+            <img src="images/damuncLogo.jpg" alt="DAMUNC-Logo">
+        </li>
+        <li>
+            <h3 class="footer-heading">CONTACT US</h3>
+            <p style="margin:30px auto;">
+                <b> Email:</b> daiictmunc@gmail.com<br>
+                OR<br>
+                <b>Call Us At:</b><br>
+                Vyom: (+91)6358077665<br>
+                Abhignya: (+91)7433009466
+            </p>
+        </li>
+    </ul>
+        <hr padding-top:50px>
+        <h3 style="text-align: center;padding:10px 0 50px 0;font-size: smaller;color: rgb(119, 119, 119);">All copyrights &copy reserved to DA-IICT</h3>
+    </footer>
+</body>
+</html>
