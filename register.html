@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<style>
+ *{
+        box-sizing: border-box; 
+        margin: 0;   
+        font-family: Lato,monospace;    
+    }
+    header {
+        position: fixed;
+        background-color:rgb(245, 245, 245);
+        height:60px;
+        width:100vw;   
+        z-index:10;
+    }
+
+    .navbar{
+        list-style: none;
+        display:flex;
+        justify-content: flex-end;
+        margin:0.5vh 10vw 1% 0;      
+    }
+
+    .navbar li{
+        padding:15px 15px; 
+    }
+    .navbar li a{
+        color:black;
+        font-size: small;        
+        text-decoration: none;  
+    }
+    .navbar li a:hover{
+        opacity:0.5;
+        font-size:large;
+    }
+    .fa-home{
+        float:left;
+        color:rgb(63, 63, 63);
+        font-size: xx-large;
+        padding:10px;
+        margin-left: 2vw;
+
+    }
+    .fa-home:hover{
+        transform: scale(1.3);
+    }
+    .fa-bars-div{
+        display: none;
+        text-align: end;
+        padding-top:15px;
+        padding-right:20px;
+        margin-right: 2vw;
+    }    
+    .fa-bars {
+       font-size: 25px;
+    }
+    .intro-background{
+        background-image: url(images/cover2.jpg);
+        background-size: cover;
+        background-position: center;
+        filter:blur(3px);  
+        height: 80vh;
+        width:100vw;
+        z-index: -10;
+    }
+    .intro{
+        position: absolute;
+        display:flex;
+        top:45%;
+        transform:translateY(-50%);
+        width:100%;        
+        text-align: center;
+        z-index: 2;  
+    }
+    
+    .logo {
+        position: relative;       
+    }
+    .logo img{
+        max-width:350px;
+        margin-right:35% ;
+        margin-left: 30%;     
+    }
+    h2{
+        font-size: x-large;
+        text-align: center;
+        color:white;
+        padding-top:13vh;
+        margin-right:7vw ;
+        margin-left: auto;      
+    }
+    .damunc{
+        font-size:50px ;
+        letter-spacing: 35px;
+        line-height: 60px;
+    }
+    .daiict{
+        letter-spacing: 20px;
+        line-height: 50px;
+    }
+    .heading{
+        padding: 0;
+        margin:0;
+        background: rgba(0,0,0,0.8);
+        font-size: 40px;
+        font-weight:800;
+        letter-spacing: 10px;
+        font-family: Lato,sans-serif;
+        padding: 3vw;
+    }
+.wrapper{
+    background: rgba(0,0,0,0.8);
+}
+ 
+.reg-form{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-left:50%;
+  transform: translateX(-50%);
+  padding:20px 0;
+  border-radius: 5px;
+  border: 5px solid rgb(182, 182, 182);
+}
+ 
+.input-div{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+ 
+.input-div,
+.msg{
+  width: 50vw;
+  text-align: center;
+}
+.input-div .input,
+.msg textarea{
+  margin: 10px 0;
+  background: rgb(223, 218, 218);
+  border: 0px;
+  padding: 10px;
+  color: black;
+  width: 50%;
+  border-radius: 10px;
+
+}
+ 
+.msg textarea{
+  height: 100px;
+}
+ 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+  text-align: center;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+}
+.btn {
+    background: #536164;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 50%;
+    margin: 10px auto;
+}
+.btn:hover{
+    transform: scale(1.1);
+    background-color:#506666;
+}
+.footer-heading{
+        text-align: center;
+        font-size:30px;
+        margin:4vw auto 1vw auto ;
+    }
+    footer{
+        background-color: rgb(54, 54, 54);
+        padding-top:5vh;
+        color:rgb(119, 118, 118);
+    }
+    footer h3{
+        color:white;
+    }
+    .footer-list{
+        display:flex;
+        list-style: none;
+        justify-content: space-evenly;
+        text-align: center;
+        margin:8vh 2vw;  
+        padding:0;  
+    }
+    .footer-list li{
+        text-align: center;
+    }
+    
+    .footer-list li img{
+        width:100%;
+        width: 300px;
+        min-width:200px;
+       
+
+    }
+    .follow{
+        justify-content: center;
+        list-style: none;
+        display:flex ;
+        padding: 0;
+        margin-top:6vh;
+    }
+    .follow li{
+        margin:0 15px;
+        transform: scale(1);
+        transition:transform 0.5s;
+    }
+    .follow li:hover{
+        transform: scale(1.3);
+        transition:transform 0.5s;
+    }
+    .follow li i{
+        background: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 15px;
+        color: rgb(54, 54, 54);
+        font-size: larger;
+    }
+
+    
+    .fab{
+        font-size: 2vw;
+        color: gray;
+    }
+    hr{
+        width: 80%;
+        margin: 5px auto;
+    }
+    @media (max-width: 1250px){
+ .fa-bars-div{
+     display: block;
+ }
+ .navbar{
+     display: none;
+ }
+ .h2,.heading{
+     font-size: large ;
+     padding-left: 15%;
+ }
+ .damunc{
+        font-size:30px ;
+        letter-spacing: 35px;
+}
+    .daiict{
+        font-size: smaller;
+        letter-spacing: 10px;
+}
+ .logo img{
+     max-width: 300px;
+     margin-right: 15%;
+ }
+
+}
+      
+     
+   
+    @media (max-width: 1000px){
+        .intro-background{
+            height:90vh;
+        }
+        .logo img{
+            margin: 0;
+        }
+        h2{
+            margin: 0;
+            padding:0;
+        }
+        .damunc{
+        letter-spacing: 25px;
+        padding-top:100vh;
+    }
+    .daiict{
+        letter-spacing: 10px;
+        line-height: 30px;
+    }
+        .intro{
+            display: block;
+            top:50px;
+            transform: none;
+        }
+        .input-div .input,
+        .msg textarea{
+            width:70%;
+        }
+        footer p{
+            font-size: small;
+        }
+        .footer-list{
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding:0;
+            list-style: none;    
+        }
+        .footer-list li{
+            width:auto;
+        }
+        .footer-list li img{
+            max-width:200px;
+        }
+        hr{
+            max-width:300px;
+            border-style: inset;
+            border-color: rgb(119, 119, 119);
+        }
+        @media(max-width:450px)
+    {
+        header{
+            height:45px;
+        }
+        
+        .fa-bars-div{
+            padding-top:10px;
+        }
+    } 
+    .input-div .input,
+    .msg textarea{
+        width: 90%;
+    }
+    }
+
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DAMUNC - Dhirubhai Ambani Model United Nations Conference</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><i class="fas fa-home"></i></a>
+        <ul class="navbar">
+           <li><a href="#">Letter From Sec-Gen</a></li>
+           <li><a href="#">Letter From EB</a></li>
+           <li><a href="#">Letter of Recognition</a></li>
+           <li><a href="#">About Committe</a></li>
+           <li><a href="#">Registration</a></li>
+           <li><a href="team.html">Meet the Team</a></li>    
+        </ul>
+        <div class="fa-bars-div">
+        <i class="fas fa-bars"></i> 
+       </div>
+    </header>
+    <main>
+        <div class="intro-background"></div>
+            <div class="intro">
+                <div  class="logo">
+                <img src="images/damuncLogo.jpg" alt="DAMUNC-Logo">
+                </div>
+                <h2><span class="damunc">DAMUNC</span><br><span class="daiict">DAIICT,<br>GANDHINAGAR</span></h2>               
+        </div>
+            <h2 class="heading">
+                DAMUNC REGISTRATION
+            </h2>
+            <div class="wrapper">
+                <div class="reg-form">
+                  <div class="input-div">
+                    <input type="text" class="input" placeholder="Name">
+                    <input type="text" class="input" placeholder="Email Address">
+                    <input type="text" class="input" placeholder="Phone">
+                    <input type="text" class="input" placeholder="Country of Interest">
+                  </div>
+                  <div class="msg">
+                    <textarea placeholder="Address"></textarea>
+                    <div class="btn">send</div>
+                  </div>
+                </div>
+              </div>
+    </main>
+    <footer>
+        <footer>
+            <ul class="footer-list">
+                <li>
+                        <h3 class="footer-heading">FOLLOW US</h3>
+                        <ul class="follow">
+                        <li><i class="fab fa-facebook-f"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
+                        <li><i class="fab fa-twitter"></i></li>
+                        </ul>
+                      
+                </li>
+                <li>
+                    <img src="images/damuncLogo.jpg" alt="DAMUNC-Logo">
+                </li>
+                <li>
+                    <h3 class="footer-heading">CONTACT US</h3>
+                    <p style="margin:30px auto;">
+                        <b> Email:</b> daiictmunc@gmail.com<br>
+                        OR<br>
+                        <b>Call Us At:</b><br>
+                        Vyom: (+91)6358077665<br>
+                        Abhignya: (+91)7433009466
+                    </p>
+                </li>
+            </ul>
+                <hr padding-top:50px>
+                <h3 style="text-align: center;padding:10px 0 50px 0;font-size: smaller;color: rgb(119, 119, 119);">All copyrights &copy reserved to DA-IICT</h3>
+            </footer>
+    </footer>
+</body>
+</html>
