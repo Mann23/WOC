@@ -79,7 +79,8 @@ margin-left:50%;
 transform: translateX(-50%);
 padding:20px 0;
 border-radius: 5px;
-border: 5px solid rgb(182, 182, 182);
+border: 5px solid rgb(150,150,150);
+
 }
 
 .input-div{
@@ -105,6 +106,35 @@ width: 50%;
 border-radius: 10px;
 
 }
+.input-div .input:hover,
+.msg textarea:hover{
+ animation: input-hover .5s;
+ animation-iteration-count: 1;
+
+}
+@keyframes input-hover{
+   0%{
+        background:linear-gradient(90deg,rgb(136, 136, 136),rgb(223, 218, 218));
+        transition: background 0.5s linear;
+    }
+    25%{
+        background:linear-gradient(90deg,rgb(223, 218, 218),rgb(131, 130, 130),rgb(223, 218, 218),rgb(223, 218, 218),rgb(223, 218, 218));
+        transition: background 0.5s linear;
+    }
+    50%{
+        background:linear-gradient(90deg,rgb(223, 218, 218),rgb(218, 211, 211),rgb(134, 132, 132),rgb(223, 218, 218),rgb(223, 218, 218));  
+        transition: background 0.5s linear;     
+    }
+    75%{
+        background:linear-gradient(90deg,rgb(223, 218, 218),rgb(223, 218, 218),rgb(223, 218, 218),rgb(138, 138, 138),rgb(223, 218, 218));
+        transition: background 0.5s linear;
+    }
+    100%{
+        background:linear-gradient(90deg,rgb(223, 218, 218),rgb(134, 134, 134));
+        transition: background 0.5s linear;
+    }
+
+}
 
 .msg textarea{
 height: 100px;
@@ -114,6 +144,7 @@ height: 100px;
 color: black;
 opacity: 1; /* Firefox */
 text-align: center;
+font-weight: 800;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -136,6 +167,7 @@ margin: 10px auto;
 }
 .btn:hover{
     transform: scale(1.1);
+    transition: transform 0.3s linear;
     animation: pulse 1s 1;
 }
 
