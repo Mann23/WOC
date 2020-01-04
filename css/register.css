@@ -3,8 +3,10 @@
     margin: 0;   
     font-family: Lato,monospace;    
 }
-main{
-    background:linear-gradient(180deg,rgb(34, 34, 34),rgb(131, 130, 130),rgb(54, 54, 54))
+body{        
+    background:url(../images/cedric-letsch-ttJ-qnuboak-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
 }
 header {
     position:fixed;
@@ -95,6 +97,7 @@ text-align: center;
 .msg textarea{
 margin: 10px 0;
 background: rgb(223, 218, 218);
+opacity: 0.8;
 border: 0px;
 padding: 10px;
 color: black;
@@ -151,7 +154,6 @@ margin: 10px auto;
     margin:4vw auto 1vw auto ;
 }
 footer{
-    background-color: rgb(54, 54, 54);
     padding-top:5vh;
     color:rgb(119, 118, 118);
 }
